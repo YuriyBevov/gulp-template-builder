@@ -5,7 +5,7 @@ const TASK_PATHS = './gulp/tasks/';
 const DEV_PATHS = {
   pug: {
     src: `${SOURCE_PATH}pug/*.pug`,
-    watchSrc: `${SOURCE_PATH}pug/**/*.pug`,
+    watchSrc: `${SOURCE_PATH}pug/**/*.{pug,scss,md}`,
     dest: BUILD_PATH
   },
 

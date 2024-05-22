@@ -16,7 +16,7 @@ task(pug);
 task(sass);
 task(server);
 
-watch(DEV_PATHS.pug.watchSrc, series(pug, refresh));
+watch(DEV_PATHS.pug.watchSrc, series(pug, sass, refresh));
 watch(DEV_PATHS.styles.watchSrc, series(sass, refresh));
 
 export const start = series(clean, parallel(pug, sass), server );
