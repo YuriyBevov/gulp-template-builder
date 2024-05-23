@@ -2,6 +2,8 @@ const SOURCE_PATH = './src/';
 const BUILD_PATH = './build/';
 const TASK_PATHS = './gulp/tasks/';
 
+let isProd = false;
+
 const DEV_PATHS = {
   fonts: {
     src: `${SOURCE_PATH}assets/fonts/*.{woff,woff2}`,
@@ -28,4 +30,4 @@ const DEV_PATHS = {
 
 }
 
-export default { DEV_PATHS, BUILD_PATH, TASK_PATHS }
+export default { DEV_PATHS, BUILD_PATH, TASK_PATHS, isProd }
