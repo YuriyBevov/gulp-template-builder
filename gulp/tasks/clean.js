@@ -1,5 +1,5 @@
-import PATH from '../gulp.config.js';
-const { BUILD_PATH } = PATH;
+import paths from '../gulp.config.js';
+const { BUILD_PATH } = paths;
 
 import {deleteAsync} from 'del';
 

@@ -1,4 +1,3 @@
-// const browserSync = require('browser-sync').create();
 import paths from '../gulp.config.js';
 const { BUILD_PATH } = paths;
 

@@ -3,20 +3,23 @@ import paths from './gulp/gulp.config.js';
 const { TASK_PATHS, DEV_PATHS, BUILD_PATH } = paths;
 
 import gulp from 'gulp';
-const { series, parallel, src, dest, task, watch } = gulp;
+const { series, parallel, task, watch } = gulp;
 
 // GULP TASKS
 import { clean } from './gulp/tasks/clean.js';
+import { copyStatic } from './gulp/tasks/copyStatic.js';
 import { pug } from './gulp/tasks/pug.js';
 import { styles as sass } from './gulp/tasks/sass.js';
 import { server, refresh } from './gulp/tasks/server.js';
 
 task(clean);
+task(copyStatic);
 task(pug);
 task(sass);
-task(server);
+task(server); 
 
+watch(DEV_PATHS.fonts.watchSrc, series(copyStatic, refresh));
 watch(DEV_PATHS.pug.watchSrc, series(pug, sass, refresh));
 watch(DEV_PATHS.styles.watchSrc, series(sass, refresh));
 
-export const start = series(clean, parallel(pug, sass), server );
+export const start = series(clean, parallel(copyStatic, pug, sass), server );
