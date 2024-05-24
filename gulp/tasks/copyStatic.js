@@ -1,14 +1,16 @@
-import paths from '../gulp.config.js';
-const { DEV_PATHS } = paths;
+import _config from '../gulp.config.js';
+const { config } = _config;
 
 import gulp from 'gulp';
 const { src, dest } = gulp;
 
 import merge from 'merge-stream';
  
-export const copyStatic = () => {
-  return merge(
-    src([DEV_PATHS.fonts.src]).pipe(dest(DEV_PATHS.fonts.dest)),
-    src([DEV_PATHS.staticResources.src]).pipe(dest(DEV_PATHS.staticResources.dest))
+export const copyStatic = (done) => {
+  merge(
+    src([config.fonts.src]).pipe(dest(config.fonts.dest)),
+    src([config.staticResources.src]).pipe(dest(config.staticResources.dest))
   );
+
+  done();
 }

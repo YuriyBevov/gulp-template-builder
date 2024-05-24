@@ -4,10 +4,12 @@
 
 - gulp
 - gulp-pug - шаблонизатор PUG
+- gulp-diffable-html - HTML-форматтер
+- gulp-htmlhint - валидатор HTML-кода. Файл с кофигурацией: .htmlhintrc
 - gulp-plumber - модуль, для вывода ошибок при сборке проекта
 - sass, gulp-sass - препроцессор SASS
 - gulp-autoprefixer - модуль для создания CSS-префиксов
-- gulp-clean-css - модул для минификации CSS
+- gulp-clean-css - модуль для минификации CSS
 - gulp-if - модуль для использования условий в тасках
 - merge-stream - модуль, позволяющий объединить несколько тасков в один
 - del - модуль, для удаления прежней сборки, перед запуском новой

@@ -1,9 +1,11 @@
-import paths from './gulp/gulp.config.js';
+import _config from './gulp/gulp.config.js';
 
-const { TASK_PATHS, DEV_PATHS, BUILD_PATH } = paths;
+const { config } = _config;
 
 import gulp from 'gulp';
 const { series, parallel, task, watch } = gulp;
+
+config.setEnv();
 
 // GULP TASKS
 import { clean } from './gulp/tasks/clean.js';
@@ -18,8 +20,9 @@ task(pug);
 task(sass);
 task(server); 
 
-watch(DEV_PATHS.fonts.watchSrc, series(copyStatic, refresh));
-watch(DEV_PATHS.pug.watchSrc, series(pug, sass, refresh));
-watch(DEV_PATHS.styles.watchSrc, series(sass, refresh));
+watch(config.fonts.watch, series(copyStatic, refresh));
+watch(config.pug.watch, series(pug, sass, refresh));
+watch(config.styles.watch, series(sass, refresh));
 
 export const start = series(clean, parallel(copyStatic, pug, sass), server );
+export const build = start;
