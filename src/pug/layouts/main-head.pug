@@ -12,4 +12,4 @@ mixin main-head(title, descriprion, keywords, styleFileNames)
       each fileName in styleFileNames
         link(rel="stylesheet" href!=`./assets/${fileName}.css`)
 
-    //- script(defer src="./assets/bundle.js")
+    script(defer src="./assets/bundle.js")

@@ -1,1 +1,1 @@
-{"version":3,"sources":["inner.scss"],"names":[],"mappings":"AAAA,KACE,MAAA","file":"inner.css","sourcesContent":["body {\n  color: green;\n}"]}
+{"version":3,"sourceRoot":"","sources":["inner.scss"],"names":[],"mappings":"AAAA;EACE","file":"inner.css","sourcesContent":["body {\n  color: green;\n}"]}

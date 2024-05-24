@@ -25,6 +25,12 @@ const config = {
     dest: `${BUILD_PATH}assets/` 
   },
 
+  scripts: {
+    src: `${SOURCE_PATH}scripts/*.js`,
+    watch: `${SOURCE_PATH}scripts/**/*.js`,
+    dest: `${BUILD_PATH}assets/` 
+  },
+
   setEnv() {
     this.isProd = process.argv.includes('build');
     this.isDev = !this.isProd;
