@@ -8,6 +8,12 @@ const config = {
     dest: `${BUILD_PATH}assets/fonts/`,
   },
 
+  ttf: {
+    src: `${SOURCE_PATH}assets/fonts/*.ttf, { encoding: false }`,
+    watch: `${SOURCE_PATH}assets/fonts/*.ttf, { encoding: false }`, 
+    dest: `${BUILD_PATH}assets/fonts/`,
+  },
+
   staticResources: {
     src: `${SOURCE_PATH}root-resources/**`,
     dest: BUILD_PATH
@@ -31,10 +37,23 @@ const config = {
     dest: `${BUILD_PATH}assets/` 
   },
 
+  images: {
+    src: `${SOURCE_PATH}assets/images/**/*.{jpg,jpeg,png,svg}`,
+    watch: `${SOURCE_PATH}assets/images/**/*.{jpg,jpeg,png,svg}`,
+    dest: `${BUILD_PATH}assets/images/`
+  },
+
+  sprite: {
+    src: `${SOURCE_PATH}assets/svg-sprite/**/icon-*.svg`,
+    name: `sprite.svg`,
+    watchSrc: `${SOURCE_PATH}assets/svg-sprite/**/icon-*.svg`,
+    dest: `${BUILD_PATH}assets/`
+  },
+
   setEnv() {
     this.isProd = process.argv.includes('build');
     this.isDev = !this.isProd;
-  },
+  }
 
 }
 

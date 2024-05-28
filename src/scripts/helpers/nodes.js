@@ -1,3 +1,3 @@
-const test = 'test const';
+const test = 'test imported const';
 
 export { test };

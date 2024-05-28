@@ -12,11 +12,15 @@ import plumber from 'gulp-plumber';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCss from 'gulp-clean-css';
 import gulpIf from 'gulp-if';
+import rename from 'gulp-rename';
+import { cleanUnusedCss } from './cleanUnusedCss.js';
+// console.log(cleanUnusedCss);
 
 export const styles = (done) => {
-	src(config.styles.src, { sourcemaps: true })
+	src(config.styles.src, { sourcemaps: config.isProd ? false : true })
     .pipe(plumber())
     .pipe(sass())
+    
     .pipe(
       gulpIf(
         config.isProd, 
@@ -35,6 +39,7 @@ export const styles = (done) => {
         })
       )
     )
+    .pipe(gulpIf(config.isProd, rename({ suffix: '.min' })))
     .pipe(dest(config.styles.dest, { sourcemaps: '.' }))
 
   done();

@@ -14,13 +14,13 @@ import uglify from 'gulp-uglify';
 import stripDebug from'gulp-strip-debug';
 
 export const scripts = (done) => {
-	src(config.scripts.src, { sourcemaps: true })
+	src(config.scripts.src, { sourcemaps: config.isProd ? false : true })
   .pipe(rollup({ plugins: [babel(), resolve(), commonjs()] }, 'umd'))
   .pipe(rename("bundle.js"))
+  .pipe(gulpIf(config.isProd, rename({ suffix: '.min' })))
   .pipe(gulpIf(config.isProd, stripDebug()))
   .pipe(gulpIf(config.isProd, uglify()))
-  
-  .pipe(dest(config.scripts.dest, { sourcemaps: '.' }))
+  .pipe(dest(config.scripts.dest, { sourcemaps: '.' }));
     
   done();
 }

@@ -17,7 +17,7 @@ export const pug = (done) => {
     .pipe(gulpIf(config.isProd,diffableHtml()))
     .pipe(htmlhint('.htmlhintrc'))
     .pipe(htmlhint.reporter())
-    .pipe(dest(config.pug.dest))
+    .pipe(dest(config.pug.dest));
   
   done();
 }
