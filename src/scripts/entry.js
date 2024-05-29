@@ -1,3 +1,3 @@
-console.log('TEST2');
+console.log('TEST2')
 
-import './modules/test-module';
+import './modules/test-module'

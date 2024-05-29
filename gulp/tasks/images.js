@@ -1,11 +1,11 @@
-import _config from '../gulp.config.js';
-const { config } = _config;
+import _config from '../gulp.config.js'
+const { config } = _config
 
-import gulp from 'gulp';
-const { src, dest } = gulp;
+import gulp from 'gulp'
+const { src, dest } = gulp
 
-import newer from 'gulp-newer';
-import sharpOptimizeImages from 'gulp-sharp-optimize-images';
+import newer from 'gulp-newer'
+import sharpOptimizeImages from 'gulp-sharp-optimize-images'
 
 export const images = (done) => {
   src([config.images.src])
@@ -25,7 +25,7 @@ export const images = (done) => {
         },
       })
     )
-    .pipe(dest(config.images.dest));
-  
-  done();
+    .pipe(dest(config.images.dest))
+
+  done()
 }

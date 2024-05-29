@@ -1,8 +1,8 @@
-import _config from '../gulp.config.js';
-const { BUILD_PATH } = _config;
+import _config from '../gulp.config.js'
+const { BUILD_PATH } = _config
 
-import {deleteAsync} from 'del';
+import { deleteAsync } from 'del'
 
 export const clean = () => {
-  return deleteAsync([BUILD_PATH]);
+  return deleteAsync([BUILD_PATH])
 }

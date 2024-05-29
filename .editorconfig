@@ -11,3 +11,7 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.DS_Store]
+insert_final_newline = false
+end_of_line = false

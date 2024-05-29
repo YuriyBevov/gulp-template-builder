@@ -5,19 +5,23 @@
 - gulp : таск-менеджер
 
 ### PUG
+
 - gulp-pug : шаблонизатор PUG
 - gulp-diffable-html : HTML-форматтер
 - gulp-htmlhint : валидатор HTML-кода. Файл с кофигурацией: .htmlhintrc
 
 ### SCSS
+
 - sass, gulp-sass : препроцессор SASS
 - gulp-autoprefixer : создание CSS-префиксов
 - gulp-clean-css : минификация CSS
 
 ### SERVER
+
 - browser-sync : запуск локального сервера
 
 ### JS
+
 - @babel/core : компилятор кода ES6 в ES5
 - gulp-better-rollup : плагин, который позволяет нам использовать Rollup.
 - rollup - сборщик модулей JavaScript, который позволяет нам использовать ES6 в нашем коде
@@ -28,14 +32,17 @@
 - gulp-strip-debug : удаление операторов консоли, предупреждений и отладчика из кода JavaScript
 
 ### IMAGES AND SVGS
+
 - gulp-svgstore : объединение SVG-файлов в один спрайт-файл
 
 ### OPTIMIZATION
+
 - gulp-sharp-optimize-images : оптимизация и конвертация изображений
 - gulp-purgecss : удаление неиспользуемого CSS
 - gulp-svgmin : минификация SVG-файлов
 
 ### ДОПОЛНИТЕЛЬНЫЕ ПЛАГИНЫ
+
 - del : удаление прежней сборки, перед запуском новой
 - gulp-if : использование условий в тасках
 - merge-stream : объединие несколько тасков в один
