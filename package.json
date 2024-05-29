@@ -4,8 +4,7 @@
   "scripts": {
     "start": "gulp start",
     "build": "gulp build",
-    "test": "npx stylelint '**/*.scss' && editorconfig-checker",
-    "prepare": "husky"
+    "test": "npx stylelint '**/*.scss' && editorconfig-checker"
   },
   "husky": {
     "hooks": {
