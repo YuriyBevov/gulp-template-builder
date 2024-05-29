@@ -3,12 +3,13 @@
   "type": "module",
   "scripts": {
     "start": "gulp start",
-    "build": "build",
-    "lint": "npx stylelint '**/*.scss' && editorconfig-checker"
+    "build": "gulp build",
+    "test": "npx stylelint '**/*.scss' && editorconfig-checker",
+    "prepare": "husky"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run test"
     }
   },
   "browserslist": [
