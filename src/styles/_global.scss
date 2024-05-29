@@ -4,7 +4,7 @@
   box-sizing: inherit;
   border-radius: 0;
 
-  @extend .scrollbar;
+  @extend %scrollbar;
 }
 
 html {
@@ -16,7 +16,8 @@ body {
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  -webkit-text-size-adjust: none;
+
+  // -webkit-text-size-adjust: none;
 }
 
 body {
@@ -65,5 +66,3 @@ address {
 picture {
   display: flex;
 }
-
-

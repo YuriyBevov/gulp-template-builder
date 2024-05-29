@@ -2,9 +2,21 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "start",
+    "start": "gulp start",
     "build": "build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npx stylelint '**/*.scss'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "gulp locale-sass",
+      "npm run lint",
+      "git add"
+    ]
   },
   "browserslist": [
     "last 2 versions",
@@ -16,6 +28,7 @@
     "@babel/core": "^7.24.6",
     "browser-sync": "^3.0.2",
     "del": "^7.1.0",
+    "editorconfig-checker": "^5.1.5",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-better-rollup": "^4.0.1",
@@ -40,11 +53,17 @@
     "gulp-ttf2woff-candy": "^1.2.0",
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify": "^3.0.2",
+    "husky": "^9.0.11",
     "merge-stream": "^2.0.0",
+    "normalize.css": "^8.0.1",
+    "prettier": "^3.2.5",
     "rollup": "^1.32.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "sass": "^1.77.2"
+    "sass": "^1.77.2",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-scss": "^6.3.0"
   }
 }
